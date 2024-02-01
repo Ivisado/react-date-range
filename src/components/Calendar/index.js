@@ -291,14 +291,19 @@ class Calendar extends PureComponent {
     const styles = this.styles;
 
     return (
-      <div className={styles.dateDisplayWrapper}>
+      <div
+        className={classnames(styles.dateDisplayWrapper, {
+          [styles.dateDisplayWrapperDark]: this.props.isDark
+        })}
+      >
         {ranges.map((range, i) => {
           if (range.showDateDisplay === false || (range.disabled && !range.showDateDisplay)) return null;
           return (
             <div className={styles.dateDisplay} key={i} style={{ color: range.color || defaultColor }}>
               <DateInput
                 className={classnames(styles.dateDisplayItem, {
-                  [styles.dateDisplayItemActive]: focusedRange[0] === i && focusedRange[1] === 0
+                  [styles.dateDisplayItemActive]: focusedRange[0] === i && focusedRange[1] === 0,
+                  [styles.dateDisplayItemDark]: this.props.isDark
                 })}
                 readOnly={!editableDateInputs}
                 disabled={range.disabled}
@@ -316,7 +321,8 @@ class Calendar extends PureComponent {
               />
               <DateInput
                 className={classnames(styles.dateDisplayItem, {
-                  [styles.dateDisplayItemActive]: focusedRange[0] === i && focusedRange[1] === 1
+                  [styles.dateDisplayItemActive]: focusedRange[0] === i && focusedRange[1] === 1,
+                  [styles.dateDisplayItemDark]: this.props.isDark
                 })}
                 readOnly={!editableDateInputs}
                 disabled={range.disabled}

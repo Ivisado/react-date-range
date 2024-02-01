@@ -1,5 +1,7 @@
 export default {
   darkMode: 'rdrDarkMode',
+  dateDisplayItemDark: 'rdrDateDisplayItemDark',
+  dateDisplayWrapperDark: 'rdrDateDisplayWrapperDark',
   monthAndYearPickersDark: 'rdrMonthAndYearPickersDark',
   prevButtonDark: 'rdrPrevButtonDark',
   nextButtonDark: 'rdrNextButtonDark',
