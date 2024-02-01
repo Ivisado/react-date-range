@@ -1,3 +1,8 @@
+
+$darkBackground: #000000;
+$darkHover: #393b3d;
+$inputColor: #e7e7e7;
+
 .rdrCalendarWrapper{
   color: #000000;
   font-size: 12px;
@@ -64,6 +69,15 @@
   }
 }
 
+.rdrMonthAndYearPickersDark{
+  select{
+    color:#aeb9bf;
+  }
+  option{
+    background-color: #222121
+  }
+}
+
 .rdrMonthPicker, .rdrYearPicker{
   margin: 0 5px
 }
@@ -92,11 +106,24 @@
   }
 }
 
+.rdrNextPrevButtonDark{
+  background: #4d4f50;
+  &:hover{
+    background: $darkHover;
+  }
+}
+
 .rdrPprevButton {
   i {
     border-width: 4px 6px 4px 4px;
     border-color: transparent rgb(52, 73, 94) transparent transparent;
     transform: translate(-3px, 0px);
+  }
+}
+
+.rdrPrevButtonDark {
+  i {
+    border-color: transparent rgb(109, 153, 197) transparent transparent;
   }
 }
 
@@ -106,6 +133,12 @@
     border-width: 4px 4px 4px 6px;
     border-color: transparent transparent transparent rgb(52, 73, 94);
     transform: translate(3px, 0px);
+  }
+}
+
+.rdrNextButtonDark {
+  i {
+    border-color: transparent transparent transparent rgb(109, 153, 197);
   }
 }
 
@@ -323,6 +356,17 @@
   }
 }
 
+.rdrStaticRangeDark{
+  color: white;
+  background: $darkBackground;
+  border-bottom: 1px solid #585a5c;
+  &:hover, &:focus{
+    .rdrStaticRangeLabel{
+      background: $darkHover;
+    }
+  }
+}
+
 .rdrStaticRangeLabel{
   display: block;
   outline: 0;
@@ -353,6 +397,15 @@
     border-color: rgb(180, 191, 196);
     outline: 0;
     color: #333;
+  }
+}
+
+.rdrInputRangeInputDark{
+  background: $darkBackground;
+  color: $inputColor;
+  &:focus, &:hover{
+    outline: 0;
+    color: $inputColor;
   }
 }
 
@@ -393,4 +446,9 @@
   font-weight: 600;
   color: #849095;
   padding: 0.833em;
+}
+
+.rdrDarkMode{
+  color: white;
+  background: $darkBackground;
 }

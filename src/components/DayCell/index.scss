@@ -9,9 +9,11 @@
 .rdrDayNumber {
   display: block;
   position: relative;
-  span{
-    color: #1d2429;
-  }
+  color: #1d2429;
+}
+
+.rdrDayNumberDark{
+  color: #ffffff;
 }
 
 .rdrDayDisabled {

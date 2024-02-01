@@ -12,7 +12,7 @@ class DateRange extends Component {
     super(props, context);
     this.state = {
       focusedRange: props.initialFocusedRange || [findNextRangeIndex(props.ranges), 0],
-      preview: null,
+      preview: null
     };
     this.styles = generateStyles([coreStyles, props.classNames]);
   }
@@ -24,7 +24,7 @@ class DateRange extends Component {
       maxDate,
       moveRangeOnFirstSelection,
       retainEndDateOnFirstSelection,
-      disabledDates,
+      disabledDates
     } = this.props;
     const focusedRangeIndex = focusedRange[0];
     const selectedRange = ranges[focusedRangeIndex];
@@ -68,7 +68,7 @@ class DateRange extends Component {
     const inValidDatesWithinRange = disabledDates.filter(disabledDate =>
       isWithinInterval(disabledDate, {
         start: startDate,
-        end: endDate,
+        end: endDate
       })
     );
 
@@ -87,7 +87,7 @@ class DateRange extends Component {
     return {
       wasValid: !(inValidDatesWithinRange.length > 0),
       range: { startDate, endDate },
-      nextFocusRange: nextFocusRange,
+      nextFocusRange: nextFocusRange
     };
   };
   setSelection = (value, isSingleValue) => {
@@ -100,12 +100,12 @@ class DateRange extends Component {
     onChange({
       [selectedRange.key || `range${focusedRangeIndex + 1}`]: {
         ...selectedRange,
-        ...newSelection.range,
-      },
+        ...newSelection.range
+      }
     });
     this.setState({
       focusedRange: newSelection.nextFocusRange,
-      preview: null,
+      preview: null
     });
     onRangeFocusChange && onRangeFocusChange(newSelection.nextFocusRange);
   };
@@ -151,7 +151,7 @@ DateRange.defaultProps = {
   moveRangeOnFirstSelection: false,
   retainEndDateOnFirstSelection: false,
   rangeColors: ['#3d91ff', '#3ecf8e', '#fed14c'],
-  disabledDates: [],
+  disabledDates: []
 };
 
 DateRange.propTypes = {
@@ -161,7 +161,7 @@ DateRange.propTypes = {
   className: PropTypes.string,
   ranges: PropTypes.arrayOf(rangeShape),
   moveRangeOnFirstSelection: PropTypes.bool,
-  retainEndDateOnFirstSelection: PropTypes.bool,
+  retainEndDateOnFirstSelection: PropTypes.bool
 };
 
 export default DateRange;

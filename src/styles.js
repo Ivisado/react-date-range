@@ -1,4 +1,12 @@
 export default {
+  darkMode: 'rdrDarkMode',
+  monthAndYearPickersDark: 'rdrMonthAndYearPickersDark',
+  prevButtonDark: 'rdrPrevButtonDark',
+  nextButtonDark: 'rdrNextButtonDark',
+  nextPrevButtonDark: 'rdrNextPrevButtonDark',
+  staticRangeDark: 'rdrStaticRangeDark',
+  inputRangeInputDark: 'rdrInputRangeInputDark',
+  dayNumberDark: 'rdrDayNumberDark',
   dateRangeWrapper: 'rdrDateRangeWrapper',
   calendarWrapper: 'rdrCalendarWrapper',
   dateDisplay: 'rdrDateDisplay',
@@ -49,5 +57,5 @@ export default {
   monthName: 'rdrMonthName',
   infiniteMonths: 'rdrInfiniteMonths',
   monthsVertical: 'rdrMonthsVertical',
-  monthsHorizontal: 'rdrMonthsHorizontal',
+  monthsHorizontal: 'rdrMonthsHorizontal'
 };

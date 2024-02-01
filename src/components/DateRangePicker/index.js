@@ -10,7 +10,7 @@ class DateRangePicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      focusedRange: [findNextRangeIndex(props.ranges), 0],
+      focusedRange: [findNextRangeIndex(props.ranges), 0]
     };
     this.styles = generateStyles([coreStyles, props.classNames]);
   }
@@ -47,6 +47,7 @@ DateRangePicker.propTypes = {
   ...DateRange.propTypes,
   ...DefinedRange.propTypes,
   className: PropTypes.string,
+  isDark: PropTypes.bool
 };
 
 export default DateRangePicker;

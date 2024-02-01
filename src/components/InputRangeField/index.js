@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 const MIN = 0;
 const MAX = 99999;
@@ -12,11 +13,7 @@ class InputRangeField extends Component {
   shouldComponentUpdate(nextProps) {
     const { value, label, placeholder } = this.props;
 
-    return (
-      value !== nextProps.value ||
-      label !== nextProps.label ||
-      placeholder !== nextProps.placeholder
-    );
+    return value !== nextProps.value || label !== nextProps.label || placeholder !== nextProps.placeholder;
   }
 
   onChange = e => {
@@ -34,7 +31,9 @@ class InputRangeField extends Component {
     return (
       <div className={styles.inputRange}>
         <input
-          className={styles.inputRangeInput}
+          className={cx(styles.inputRangeInput, {
+            [styles.inputRangeInputDark]: this.props.isDark
+          })}
           placeholder={placeholder}
           value={value}
           min={MIN}
@@ -54,18 +53,20 @@ InputRangeField.propTypes = {
   label: PropTypes.oneOfType([PropTypes.element, PropTypes.node]).isRequired,
   placeholder: PropTypes.string,
   styles: PropTypes.shape({
+    inputRangeInputDark: PropTypes.string,
     inputRange: PropTypes.string,
     inputRangeInput: PropTypes.string,
-    inputRangeLabel: PropTypes.string,
+    inputRangeLabel: PropTypes.string
   }).isRequired,
   onBlur: PropTypes.func.isRequired,
   onFocus: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
+  isDark: PropTypes.bool
 };
 
 InputRangeField.defaultProps = {
   value: '',
-  placeholder: '-',
+  placeholder: '-'
 };
 
 export default InputRangeField;

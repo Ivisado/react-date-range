@@ -21,6 +21,7 @@ const [state, setState] = useState([
   months={2}
   ranges={state}
   direction="horizontal"
+  isDark={true}
 />;
 ```
 
@@ -139,18 +140,19 @@ const [state, setState] = useState({
   direction="horizontal"
   ariaLabels={{
     dateInput: {
-      selection1: { startDate: "start date input of selction 1", endDate: "end date input of selction 1" },
-      selection2: { startDate: "start date input of selction 2", endDate: "end date input of selction 2" }
+      selection1: { startDate: 'start date input of selction 1', endDate: 'end date input of selction 1' },
+      selection2: { startDate: 'start date input of selction 2', endDate: 'end date input of selction 2' }
     },
-    monthPicker: "month picker",
-    yearPicker: "year picker",
-    prevButton: "previous month button",
-    nextButton: "next month button",
+    monthPicker: 'month picker',
+    yearPicker: 'year picker',
+    prevButton: 'previous month button',
+    nextButton: 'next month button'
   }}
 />;
 ```
 
 #### Example: Custom Day Cell Content
+
 Show orange dot only for weekend
 
 ```jsx inside Markdown
@@ -176,23 +178,23 @@ function customDayContent(day) {
     extraDot = (
       <div
         style={{
-          height: "5px",
-          width: "5px",
-          borderRadius: "100%",
-          background: "orange",
-          position: "absolute",
+          height: '5px',
+          width: '5px',
+          borderRadius: '100%',
+          background: 'orange',
+          position: 'absolute',
           top: 2,
-          right: 2,
+          right: 2
         }}
       />
-    )
+    );
   }
   return (
     <div>
       {extraDot}
-      <span>{format(day, "d")}</span>
+      <span>{format(day, 'd')}</span>
     </div>
-  )
+  );
 }
 
 <DateRangePicker
@@ -205,20 +207,21 @@ function customDayContent(day) {
   dayContentRenderer={customDayContent}
   ariaLabels={{
     dateInput: {
-      selection1: { startDate: "start date input of selction 1", endDate: "end date input of selction 1" },
-      selection2: { startDate: "start date input of selction 2", endDate: "end date input of selction 2" }
+      selection1: { startDate: 'start date input of selction 1', endDate: 'end date input of selction 1' },
+      selection2: { startDate: 'start date input of selction 2', endDate: 'end date input of selction 2' }
     },
-    monthPicker: "month picker",
-    yearPicker: "year picker",
-    prevButton: "previous month button",
-    nextButton: "next month button",
+    monthPicker: 'month picker',
+    yearPicker: 'year picker',
+    prevButton: 'previous month button',
+    nextButton: 'next month button'
   }}
 />;
 ```
 
-
 #### Example: Restrict Date Selection
+
 Restricts access for range selection to (-30, +30) days of current date.
+
 ```jsx inside Markdown
 import { addDays } from 'date-fns';
 import { useState } from 'react';
